@@ -21,6 +21,22 @@
             }
         }
 
+        a:link,
+        a:visited {
+            text-decoration: none;
+            color: #337ab7;
+        }
+
+        a:hover,
+        a:active {
+            text-decoration: none;
+            color: #e56244;
+        }
+
+        div {
+            border-radius: 5px;
+        }
+
         .header {
             border-top: solid black 3px;
         }
@@ -80,6 +96,60 @@
             border: solid 1px #cccccc;
             padding: 10px 0px;
             background-color: #563d7c;
+        }
+
+        /*边栏样式*/
+        .side {
+            border: solid 1px #cccccc;
+            margin: 10px 0px;
+            padding: 0px;
+        }
+
+        .side .tip {
+            background-color: #333333;
+            height: 42px;
+            color: white;
+            line-height: 42px;
+            padding-left: 10px;
+            border-radius: 0px;
+            font-size: 18px;
+            border-bottom: solid 2px orangered;
+        }
+
+        .side ul {
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        .side ul li {
+            line-height: 35px;
+        }
+
+        /*底部样式*/
+        .footer {
+            background-color: #333333;
+            margin-top: 20px;
+            margin-bottom: 0px;
+            padding: 0px;
+            border-radius: 0px;
+            color: white;
+        }
+
+        .footer .left {
+            font-size: 16px;
+            margin: 20px 0px;
+        }
+
+        .footer .center {
+            font-size: 16px;
+            margin: 20px 0px;
+            text-align: center;
+        }
+
+        .footer .right {
+            font-size: 16px;
+            margin: 20px 0px;
+            text-align: right;
         }
     </style>
 </head>
@@ -183,24 +253,87 @@
                 <div class="col-12" style="height: 120px;border: solid 1px red;margin: 10px 0px;">
                     文章二
                 </div>
+
                 <div class="col-12" style="height: 120px;border: solid 1px red;margin: 10px 0px;">
                     文章三
                 </div>
             </div>
+            <!--右侧边栏-->
             <div class="col-sm-3 col-12" style="border: none;padding-right: 0px;padding-top: 15px;">
+                <!--搜索，关键字-->
                 <div class="col-12 search-bar row">
                     <div class="col-8">
                         <input type="text" class="form-control" id="keyword" placeholder="请输入关键字" />
                     </div>
                     <div class="col-4">
-                        <button type="button" class="btn btn-primary" >搜索</button>
+                        <button type="button" class="btn btn-primary">搜索</button>
                     </div>
+                </div>
+
+                <!--最新文章-->
+                <div class="col-12 side">
+                    <div class="col-12 tip">最新文章</div>
+                    <ul>
+                        <li><a href="#">1. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">2. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">3. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">1. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">2. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">3. 要素在于你的工作能力和实践经验 ...</a></li>
+                    </ul>
+                </div>
+
+                <!--最多阅读-->
+                <div class="col-12 side">
+                    <div class="col-12 tip">最多阅读</div>
+                    <ul>
+                        <li><a href="#">1. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">2. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">3. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">1. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">2. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">3. 要素在于你的工作能力和实践经验 ...</a></li>
+                    </ul>
+                </div>
+                <!--文章推荐栏目-->
+                <div class="col-12 side">
+                    <div class="col-12 tip">文章推荐</div>
+                    <ul>
+                        <li><a href="#">1. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">2. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">3. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">1. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">2. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">3. 要素在于你的工作能力和实践经验 ...</a></li>
+                    </ul>
+                    <div class="col-12 tip" style="background-color: #3276b1; text-align: center; cursor: pointer;">回到顶部</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid" style="border: solid 1px red;height: 150px;"></div>
+    <div class="container-fluid footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 left">
+                    <p>版权所有 © 蜗牛笔记 (V-1.0)</p>
+                    <p>备案号：<a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备15014130号-1</a></p>
+                </div>
+                <div class="col-4 center">
+                    <p>友情链接</p>
+                    <p><a href="http://www.woniuxy.com/" target="_blank">在线课堂</a>&nbsp;&nbsp;&nbsp;
+                        <a href="http://www.woniuxy.com/live" target="_blank">直播课堂</a>&nbsp;&nbsp;&nbsp;
+                        <a href="http://www.woniuxy.com/train/index.html" target="_blank">培训中心</a>&nbsp;&nbsp;&nbsp;
+                        <a href="http://www.aduobi.com" target="_blank">UI设计学院</a>
+                    </p>
+                </div>
+                <div class="col-4 right">
+                    <p>联系我们</p>
+                    <p>成都★孵化园&nbsp;&nbsp;&nbsp;QQ/微信：15903523</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
