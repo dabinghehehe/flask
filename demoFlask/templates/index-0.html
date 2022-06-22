@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>BootStrap博客系统</title>
+    <link rel="stylesheet" type="text/css" href="/bootstrap.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+    <style>
+        .row div {
+            border: solid 2px red;
+        }
+
+        @media (min-width:1300px) {
+            .container {
+                max-width: 1300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="border: solid 2px red;height: 100px;">hello</div>
+    <div class="container-fluid" style="border: solid 2px red;height: 50px;">hello</div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-12" style="border: none;padding: 0px;">
+                <div class="col-12" style="height: 200px">轮播图</div>
+                <div class="col-12" style="height: 200px">文章一</div>
+                <div class="col-12" style="height: 200px">文章二</div>
+            </div>
+            <div class="col-sm-3 col-12" style="border: none;padding-right: 0px;">
+                <div class="col-12" style="height: 50px">搜索</div>
+                <div class="col-12" style="height: 300px">推荐</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="border: solid 2px red;height: 150px;"></div>
+</body>
+
+</html>
