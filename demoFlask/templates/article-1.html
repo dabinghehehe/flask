@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>BootStrap博客系统</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+    <link href="/icon/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+    <link href="/css/ybnote.css" rel="stylesheet">
+    <!-- jQuery and JavaScript Bundle with Popper -->
+    <script type="text/JavaScript" src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script type="text/JavaScript"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+</head>
+
+<body>
+    <!--顶部logo和slgon区域-->
+    <div class="header">
+        <div class="container" style="height: 80px;">
+            <div class="row">
+                <div class="col-5" style="padding-top: 10px;"><img src="/img/logo.png" width="230px"></div>
+                <div class="col-7 d-none d-sm-block" style="text-align: right;padding-top: 15px;">
+                    <h2>蜗牛之名，行学习之时</h2>
+                </div>
+                <div class="col-7 d-sm-none" style="text-align: right;padding-top: 15px;">
+                    <h2>技术博客</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--导航栏目-->
+    <div class="menu">
+        <div class="container" style="padding: 0px;">
+            <nav class="navbar navbar-expand-lg navbar-dark menu-bar" style="background-color: #563d7c;">
+                <a class="navbar-brand" href="#">快捷导航</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav menu-bar">
+                        <a class="nav-item nav-link" href="/type/1-1">PHP开发</a>
+                        <a class="nav-item nav-link" href="/type/2-1">Java开发</a>
+                        <a class="nav-item nav-link" href="/type/3-1">Python开发</a>
+                        <a class="nav-item nav-link" href="/type/4-1">Web前端</a>
+                        <a class="nav-item nav-link" href="/type/5-1">测试开发</a>
+                        <a class="nav-item nav-link" href="/type/6-1">数据科学</a>
+                        <a class="nav-item nav-link" href="/type/7-1">网络安全</a>
+                        <a class="nav-item nav-link" href="/type/8-1">蜗牛杂谈</a>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <a class="nav-item nav-link" href="/type/1-1">登录</a>
+                        <a class="nav-item nav-link" href="/type/2-1">注册</a>
+                        <a class="nav-item nav-link" href="/type/2-1">用户中心</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-12" style="border: none;" id="left">
+                <div class=" col-12 row article-detail">
+                    <div class=" col-9 title">
+                        从会计转行Java开发，她的入职月薪15K！
+                    </div>
+                    <div class=" col-3 favorite">
+                        <label><span class="oi oi-heart" aria-hidden="true"></span>收藏本文</label>
+                    </div>
+                    <div class=" col-12 info">
+                        作者：强哥&nbsp;&nbsp;&nbsp;类别：蜗牛杂谈&nbsp;&nbsp;&nbsp;
+                        日期：2020-10-14 10:39:28&nbsp;&nbsp;&nbsp;
+                        阅读：3643 次&nbsp;&nbsp;&nbsp;消耗积分：0 分
+                    </div>
+                    <div class=" col-12 content">
+                        她叫小漩，2017年毕业于深圳的一所大学，专业是会计。
+                        大学毕业后她就到了一家会计事务所工作，这份工作干了两年多，但是薪资都很一般，后来她就有了转行的想法。
+                        她本身就对IT技术挺感兴趣的，所以在产生了转行的念头之后，便开始寻找合适的培训机构，她有一个朋友正好在蜗牛学院培训完刚就业，于是就介绍了她过来实地考察。
+                        当时是家人陪着她一起到校咨询的，咨询完当天就交了报名费。目前小漩已经入职了上海的一家科技公司，担任Java开发人员，她的入职月薪15K！
+                    </div>
+                </div>
+
+                <div class=" col-12 article-nav">
+                    <div>版权所有，转载本站文章请注明出处：蜗牛笔记， http://www.woniunote.com/article/603</div>
+                    <div>上一篇：
+                        <a href="/article/602">蜗牛出版之《自动化测试开发全程实战》书籍详解！</a>
+                    </div>
+                    <div>下一篇：
+                        <a href="/article/604">通过对合作企业的回访，我们发现：企业招聘时更看重员工这三种能力！</a>
+                    </div>
+                </div>
+
+                <div class="col-12 article-comment" id="commenttop">
+                    <div class="col-12 row add-comment ">
+                        <div class="col-sm-2 col-12">
+                            <label for="nickname">你的昵称：</label>
+                        </div>
+                        <div class="col-sm-10 col-12" style="padding: 0 0 0 10px;">
+                            <input type="text" class="form-control" id="nickname" value="你还未登录，双击此处可登录."
+                                ondblclick="showLogin()" readonly="">
+                        </div>
+                    </div>
+
+                    <div class="col-12 row">
+                        <div class="col-sm-2 col-12">
+                            <label for="comment">你的评论：</label>
+                        </div>
+                        <div class="col-sm-10 col-12" style="padding: 0 0 0 10px;">
+                            <textarea id="comment" class="form-control" placeholder="请在此留下你的真诚的、感人的、发自肺腑的赞美之词."
+                                style="height: 100px;"></textarea>
+                            <!--<script id="comment" name="comment" type="text/plain"></script>-->
+                        </div>
+                    </div>
+
+                    <div class="col-12 row" style="margin-bottom: 20px;">
+                        <div class="col-2"></div>
+                        <div class="col-sm-8 col-12" style="text-align: left; color: #888888;">提示：登录后添加有效评论可享受积分哦！</div>
+                        <div class="col-sm-2 col-12" style="text-align: right">
+                            <button type="button" class="btn btn-primary" onclick="showLogin()">点此登录</button>
+                        </div>
+                    </div>
+
+                    <div id="commentDiv">
+                        <!-- 循环遍历评论，这部分代码保持不变 -->
+                        <div class="col-12 list row">
+                            <div class="col-2 icon">
+                                <img src="/img/12.png" class="img-fluid" style="width: 70px;">
+                            </div>
+                            <div class="col-10 comment">
+                                <div class="col-12 row" style="padding: 0px;">
+                                    <div class="col-7 commenter">1640968773&nbsp;&nbsp;&nbsp;2022-06-09 11:37:13</div>
+                                    <div class="col-5 reply">
+                                        <!-- 文章作者、管理员和评论者只能回复和隐藏，不能点赞-->
+                                        <label onclick="gotoReply('115')">
+                                            <span class="oi oi-arrow-circle-right" aria-hidden="true"></span>回复
+                                        </label>&nbsp;&nbsp;&nbsp;
+                                        <label onclick="agreeComment(this, '115')">
+                                            <span class="oi oi-chevron-bottom" aria-hidden="true"></span> 赞成
+                                            (<span>1</span>)
+                                        </label>&nbsp;&nbsp;&nbsp;
+                                        <label onclick="opposeComment(this, '115')">
+                                            <span class="oi oi-x" aria-hidden="true"></span> 反对 (<span>0</span>)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 content">
+                                    写的很好！ </div>
+                            </div>
+                        </div>
+
+                        <!-- 在当前评论下方填充回复评论,如果当前评论有回复才填充，使用notempty条件判断 -->
+                    </div>
+
+                </div>
+            </div>
+
+            <!--右侧边栏-->
+            <div class="col-sm-3 col-12" style="border: none;padding-right: 0px;padding-top: 15px;">
+                <!--搜索，关键字-->
+                <div class="col-12 search-bar row">
+                    <div class="col-8">
+                        <input type="text" class="form-control" id="keyword" placeholder="请输入关键字" />
+                    </div>
+                    <div class="col-4">
+                        <button type="button" class="btn btn-primary">搜索</button>
+                    </div>
+                </div>
+
+                <!--最新文章-->
+                <div class="col-12 side">
+                    <div class="col-12 tip">最新文章</div>
+                    <ul>
+                        <li><a href="#">1. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">2. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">3. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">1. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">2. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">3. 要素在于你的工作能力和实践经验 ...</a></li>
+                    </ul>
+                </div>
+
+                <!--最多阅读-->
+                <div class="col-12 side">
+                    <div class="col-12 tip">最多阅读</div>
+                    <ul>
+                        <li><a href="#">1. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">2. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">3. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">1. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">2. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">3. 要素在于你的工作能力和实践经验 ...</a></li>
+                    </ul>
+                </div>
+                <!--文章推荐栏目-->
+                <div class="col-12 side">
+                    <div class="col-12 tip">文章推荐</div>
+                    <ul>
+                        <li><a href="#">1. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">2. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">3. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">1. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">2. 要素在于你的工作能力和实践经验 ...</a></li>
+                        <li><a href="#">3. 要素在于你的工作能力和实践经验 ...</a></li>
+                    </ul>
+                    <div class="col-12 tip" style="background-color: #3276b1; text-align: center; cursor: pointer;">回到顶部
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 left">
+                    <p>版权所有 © 蜗牛笔记 (V-1.0)</p>
+                    <p>备案号：<a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备15014130号-1</a></p>
+                </div>
+                <div class="col-4 center">
+                    <p>友情链接</p>
+                    <p><a href="http://www.woniuxy.com/" target="_blank">在线课堂</a>&nbsp;&nbsp;&nbsp;
+                        <a href="http://www.woniuxy.com/live" target="_blank">直播课堂</a>&nbsp;&nbsp;&nbsp;
+                        <a href="http://www.woniuxy.com/train/index.html" target="_blank">培训中心</a>&nbsp;&nbsp;&nbsp;
+                        <a href="http://www.aduobi.com" target="_blank">UI设计学院</a>
+                    </p>
+                </div>
+                <div class="col-4 right">
+                    <p>联系我们</p>
+                    <p>成都★孵化园&nbsp;&nbsp;&nbsp;QQ/微信：15903523</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
