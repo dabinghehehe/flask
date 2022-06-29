@@ -104,7 +104,59 @@ INSERT INTO article(userid,type,headline,content,thumbnail,createtime,updatetime
 
 ## 用户评论表comment
 
+| 字段名称    | 字段类型    | 字段约束                                                     | 字段说明                         |
+| ----------- | ----------- | ------------------------------------------------------------ | -------------------------------- |
+| commentid   | int(11)     | 自增长、主键、不为空                                         | 评论唯一编号                     |
+| userid      | int(11)     | users表外键、不为空                                          | 关联评论者信息                   |
+| articleid   | int(11)     | article表外键、不为空                                        | 关联文章表信息                   |
+| content     | text        | 字符串、最大65536字符                                        | 评论的内容                       |
+| ipaddr      | varchar(30) | 字符串、最大30个字符                                         | 评论用户的IP地址                 |
+| replyid     | int(11)     | 整数，如果是评论回复，则保存被回复评论的commentid，否则为0表示为原始评论 | 是否为原始评论及被回复评论的ID号 |
+| agreecount  | int(11)     | 整数、默认为0                                                | 赞同该评论的数量                 |
+| opposecount | int(11)     | 整数、默认为0                                                | 反对该评论的数量                 |
+| hidden      | tinyint     | 整数、默认为0（不隐藏）                                      | 评论是否被隐藏                   |
+| createtime  | datetime    | 时间日期类型                                                 | 该条数据的新增时间               |
+| updatetime  | datetime    | 时间日期类型                                                 | 该条数据的修改时间               |
+
+```mysql
+CREATE TABLE comment(
+    commentid int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    userid int(11) NOT NULL,
+    articleid int(11) NOT NULL,
+    content text,
+    ipaddr varchar(30),
+    replyid int(11) NOT NULL DEFAULT 0,
+    agreecount int(11) NOT NULL DEFAULT 0,
+    opposecount int(11) NOT NULL DEFAULT 0,
+    hidden tinyint NOT NULL DEFAULT 0,
+    createtime datetime,
+    updatetime datetime,
+    FOREIGN KEY (userid) REFERENCES users (userid),
+    FOREIGN KEY (articleid) REFERENCES article (articleid)
+);
+```
+
+
+
 ## 积分表credit
+
+| **字段名称** | **字段类型** | **字段约束**                                                 | **字段说明**                                                 |
+| ------------ | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| creditid     | int(11)      | 自增长、主键、不为空                                         | 积分表唯一编号                                               |
+| userid       | int(11)      | users表外键、不为空                                          | 关联用户表信息                                               |
+| category     | varchar(10)  | 积分变化对应的类别，如：  阅读文章：消耗文章设定积分  评论文章：加2分  正常登录：加1分  用户注册：加50积分  在线充值：1元换10分  用户投稿：加200积分 | 积分变化的原因说明，便于用户和管理员查询明细。  在线充值不支持个人用户开通支付账户，本书暂不讲解。 |
+| target       | int(11)      | 积分消耗对应的目标，如果是阅读和评论文章，则对应为文章ID，如果在正常登录或注册，则显示0。 | 积分新增或消耗对应的目标对象。                               |
+| credit       | int(11)      | 整数，可正可负                                               | 积分的具体数量                                               |
+| createtime   | datetime     | 时间日期类型                                                 | 该条数据的新增时间                                           |
+| updatetime   | datetime     | 时间日期类型，格式同上                                       | 该条数据的修改时间                                           |
 
 ## 收藏表favorite
 
+| **字段名称** | **字段类型** | **字段约束**                | **字段说明**       |
+| ------------ | ------------ | --------------------------- | ------------------ |
+| favoriteid   | int(11)      | 自增长、主键、不为空        | 收藏表唯一编号     |
+| articleid    | int(11)      | article表外键、不为空       | 关联文章表信息     |
+| userid       | int(11)      | users表外键、不为空         | 关联用户表信息     |
+| canceled     | tinyint      | 整数、默认为0（不取消收藏） | 文章是否被取消收藏 |
+| createtime   | datetime     | 时间日期类型                | 该条数据的新增时间 |
+| updatetime   | datetime     | 时间日期类型，格式同上      | 该条数据的修改时间 |
