@@ -7,7 +7,7 @@ app = Flask(__name__, static_url_path='/',
 
 @ app.route("/")
 def direct_show():
-    return render_template("post-1.html")
+    return render_template("index-1.html")
 
 
 if __name__ == "__main__":
